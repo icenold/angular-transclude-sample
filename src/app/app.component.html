@@ -1,9 +1,15 @@
 <app-child-sample>
-  <ng-template #injectedTemplate let-data>
-      Hello {{data.human.name}} number {{data.number}}
-  </ng-template>
+    <ng-template class="list-template" let-data>
+        Hello {{data.human.name}} number {{data.number}}
+        <button #myBtn >mybutton1</button>
+    </ng-template>
+</app-child-sample>
 
-  <ng-template #anotherTemplate let-human>
-      Hello again {{human.name}}!
-  </ng-template>
+-------------------------------------------------------------------------------
+
+<app-child-sample>
+    <ng-template #injectedTemplate let-data>
+        Moshi moshi {{data.human.name}} number {{data.number}}
+        <button #myBtn >mybutton2</button>
+    </ng-template>
 </app-child-sample>

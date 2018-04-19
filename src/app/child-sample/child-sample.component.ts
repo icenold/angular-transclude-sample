@@ -7,11 +7,8 @@ import { Component, OnInit, TemplateRef, ContentChild } from '@angular/core';
 })
 export class ChildSampleComponent implements OnInit {
 
-  @ContentChild('injectedTemplate') 
+  @ContentChild(TemplateRef)
   public injectedTemplate:TemplateRef<any>;
-
-  @ContentChild('anotherTemplate') 
-  public anotherTemplate:TemplateRef<any>;
 
   constructor() { }
   public human = {name:'Batman', age:27};
