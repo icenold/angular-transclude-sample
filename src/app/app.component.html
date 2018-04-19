@@ -1,15 +1,13 @@
 <app-child-sample>
-    <ng-template class="list-template" let-data>
-        Hello {{data.human.name}} number {{data.number}}
-        <button #myBtn >mybutton1</button>
+    <ng-template testHeaderTemplate let-somehuman>
+        <h1>Hello {{somehuman.name}}</h1>
     </ng-template>
-</app-child-sample>
+    <!-- <ng-template testListTemplate let-listitem>
+        <b>{{listitem}}</b>
+    </ng-template> -->
 
--------------------------------------------------------------------------------
+    <!--.................................OR...........................................->
 
-<app-child-sample>
-    <ng-template #injectedTemplate let-data>
-        Moshi moshi {{data.human.name}} number {{data.number}}
-        <button #myBtn >mybutton2</button>
-    </ng-template>
+    <!-- <h1 *testHeaderTemplate="let somehuman" >Hello {{somehuman.name}}</h1> -->
+    <b *testListTemplate="let listitem">{{listitem}}</b>
 </app-child-sample>

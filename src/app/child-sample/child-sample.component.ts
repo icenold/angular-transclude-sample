@@ -1,4 +1,6 @@
 import { Component, OnInit, TemplateRef, ContentChild } from '@angular/core';
+import { TestHeaderTemplateDirective } from '../test-header-template.directive';
+import { TestListTemplateDirective } from '../test-list-template.directive';
 
 @Component({
   selector: 'app-child-sample',
@@ -7,8 +9,11 @@ import { Component, OnInit, TemplateRef, ContentChild } from '@angular/core';
 })
 export class ChildSampleComponent implements OnInit {
 
-  @ContentChild(TemplateRef)
-  public injectedTemplate:TemplateRef<any>;
+  @ContentChild(TestHeaderTemplateDirective, {read:TemplateRef})
+  public headerTemplate;
+
+  @ContentChild(TestListTemplateDirective, {read:TemplateRef})
+  public listTemplate;
 
   constructor() { }
   public human = {name:'Batman', age:27};
